@@ -13,21 +13,21 @@ go get github.com/dernise/routeboxer
 You first need to initialize a RouteBoxer object with an array of coordinates [Longitude, Latitude] representing the route and the desired range.
 
 ```go
-	pointSet := geo.PointSet{
-		{3.0366159982599186, 50.627300916239626}, {3.0368849735327217, 50.626974944025285}
-	}
+pointSet := geo.PointSet{
+	{3.0366159982599186, 50.627300916239626}, {3.0368849735327217, 50.626974944025285}
+}
 
-	routeBoxer := NewRouteBoxer(1000, pointSet)
+routeBoxer := NewRouteBoxer(1000, pointSet)
 ```
 
 You can now run the algorithm with :
 
 ```go
-	boxes := routeBoxer.Boxes()
+boxes := routeBoxer.Boxes()
 ```
 
 Once the calculation are complete, you can get a GeoJSON like object
 
 ```go
-	boxes.ToGeoJson()
+boxes.ToGeoJson()
 ```
